@@ -1,0 +1,98 @@
+
+:root {
+	font-size: 16px;
+}
+
+body {
+  font-family: goldenbook, serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: white;
+  background-color: black;
+  scroll-behavior: smooth;
+  margin:0px;
+  padding: 0px;
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+*{
+  //outline: 1px solid red;
+}
+.menu{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: calc(100vh - 20rem);
+	justify-content: space-around;
+	align-items: center;
+  .menu__item{
+    z-index: -1;
+    position: relative;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: rgba(white, 0.3);
+    font-size: 2rem;
+  }
+  @media (min-width: 768px) {
+    @for $i from 1 through 5 {
+      .menu__item:nth-child(#{$i}){
+        margin-right: -($i - 1)*150px;
+      }
+    }
+    .menu__item:nth-child(odd){
+      transform: translateX(-50%);
+    }
+    .menu__item:nth-child(even){
+      transform: translateX(50%);
+    }
+    .menu__item{
+      z-index: -1;
+      position: relative;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: rgba(white, 0.3);
+      font-size: 5rem;
+    }
+  }
+}
+.images-wrap{
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;  
+}
+
+.hover-reveal {
+	position: absolute;
+	z-index: 5;
+	width: 220px;
+	height: 400px;
+	top: 50%;
+	left: 50%;
+  transform: translate(-50%, -50%);
+	pointer-events: none;
+	opacity: 0;
+}
+
+.hover-reveal__inner{
+  overflow: hidden;
+  border-radius: 10vw;
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+.hover-reveal__img {
+  width: 220px;
+	height: 400px;
+	position: absolute;
+  filter: brightness(0.8);
+}
+
