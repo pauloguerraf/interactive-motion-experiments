@@ -1,5 +1,4 @@
 import { gsap } from "gsap";
-import { map, lerp, clamp, getMousePos } from '../utils/utils'
 
 export default class MenuItem {
 
@@ -96,7 +95,7 @@ export default class MenuItem {
             }
         });
         this.tl.to(this.DOM.el, {color: 'white'},0);
-        [...this.DOM.revealElements].forEach ((el, i)=>{
+        [...this.DOM.revealElements].forEach ((el)=>{
             this.tl.to(el.reveal, {opacity:1, duration: 1}, 0);
             this.tl.fromTo(el.revealInner, {borderRadius: '5vw'}, {borderRadius: '10vw',  duration: 1}, 0);
             this.tl.fromTo(el.revealImage, {scale: 1.25}, {scale:1}, 0);
